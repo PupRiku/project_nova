@@ -17,7 +17,7 @@ jobs:
     # Prebuilt image with a headless Godot 4 binary on PATH as `godot`.
     # Pin this to match the Godot version the team develops on.
     container:
-      image: barichello/godot-ci:4.7.0
+      image: barichello/godot-ci:4.7
     steps:
       - name: Checkout
         uses: actions/checkout@v4
