@@ -1,0 +1,50 @@
+# ── Godot 4 ────────────────────────────────────────────────
+# Godot's per-project cache. Regenerated on open; never commit.
+.godot/
+
+# Legacy Godot 3 import cache (harmless to keep ignored).
+.import/
+
+# Mono/C# build artifacts (only relevant if you add C# later).
+.mono/
+data_*/
+mono_crash.*.json
+
+# ── Exported builds ────────────────────────────────────────
+# Anything you export for distribution. Ship via Releases, not git.
+/build/
+/builds/
+/export/
+/exports/
+*.exe
+*.pck
+*.dmg
+*.app
+*.zip
+*.x86_64
+*.wasm
+
+# ── OS / editor junk ───────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.swp
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# ── Secrets / local overrides ──────────────────────────────
+# Never commit signing keys, store credentials, or local paths.
+export_presets.cfg
+*.keystore
+*.p12
+.env
+.env.local
+
+# ── Obsidian workspace (per-user UI state, not shared docs) ─
+# We DO commit the vault's notes; we ignore only volatile UI state.
+docs/.obsidian/workspace.json
+docs/.obsidian/workspace-mobile.json
+docs/.obsidian/cache

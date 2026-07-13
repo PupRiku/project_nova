@@ -1,0 +1,40 @@
+name: CI
+
+# Keeps `main` from silently breaking: on every push/PR we import the
+# project headless (catches load/parse errors) and run the GUT test
+# suite if it's present. The GUT step is guarded so this passes before
+# the test addon is installed, then starts enforcing tests once it is.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  smoke-and-test:
+    runs-on: ubuntu-latest
+    # Prebuilt image with a headless Godot 4 binary on PATH as `godot`.
+    # Pin this to match the Godot version the team develops on.
+    container:
+      image: barichello/godot-ci:4.7.0
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Import project (headless)
+        # First headless run imports assets and compiles scripts; a parse
+        # or load error fails the build here.
+        run: godot --headless --path . --import --quit
+
+      - name: Run GUT tests (if installed)
+        run: |
+          if [ -f addons/gut/gut_cmdln.gd ]; then
+            echo "GUT found — running suite."
+            godot --headless --path . -s addons/gut/gut_cmdln.gd \
+              -gdir=res://tests -gexit
+          else
+            echo "GUT not installed yet — skipping tests (smoke test only)."
+          fi
