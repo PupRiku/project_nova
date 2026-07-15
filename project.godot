@@ -1,21 +1,16 @@
-; Engine configuration file.
-; It's best edited using the editor UI and not directly,
-; since the parameters that go here are not all obvious.
-;
-; Format:
-;   [section] ; section goes between []
-;   param=value ; assign values to parameters
+; Godot 4 project configuration.
+; This is intentionally minimal — a working skeleton. Autoloads,
+; the full input map, display settings, and layers get filled in
+; during Phase 0/1. Edit via the Godot editor where possible so the
+; editor keeps this file well-formed.
 
 config_version=5
 
-[animation]
-
-compatibility/default_parent_skeleton_in_mesh_instance_3d=true
-
 [application]
 
-config/name="Indie RPG (working title)"
-config/description="Menu-driven turn-based RPG with action commands."
+config/name="Project Nova"
+config/description="A 2D turn-based RPG where every attack and defense is a timed act of reading time itself. Set on Novum."
+run/main_scene=""
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -24,9 +19,12 @@ config/icon="res://icon.svg"
 window/size/viewport_width=640
 window/size/viewport_height=360
 window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
 
 [input]
 
+; Core action-command input. The single "timing" button is the heart
+; of the Paper-Mario press and the Expedition-33 parry window.
 ui_action_command={
 "deadzone": 0.5,
 "events": []
@@ -34,5 +32,5 @@ ui_action_command={
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
+textures/canvas_textures/default_texture_filter=0
