@@ -15,7 +15,8 @@ jobs:
   smoke-and-test:
     runs-on: ubuntu-latest
     # Prebuilt image with a headless Godot 4 binary on PATH as `godot`.
-    # Pin this to match the Godot version the team develops on.
+    # Pinned to match the local Godot version (4.7). If this tag ever lags a
+    # Godot release, swap to a "setup Godot" action that downloads a pinned build.
     container:
       image: barichello/godot-ci:4.7
     steps:
