@@ -1,4 +1,4 @@
-# 🏠 Home — Design Vault
+# 🏠 Project Nova — Design Vault
 
 The single source of truth for the game. Code follows these docs; when they
 disagree, the doc wins (or gets updated in the same change).
@@ -14,7 +14,9 @@ disagree, the doc wins (or gets updated in the same change).
 - [[04 - Art & Audio Direction]] — visual target, sprite specs, pipeline
 
 ## 🌍 World
-- [[05 - World Bible]] — premise, characters, lore *(needs the premise first)*
+- [[05 - World Bible]] — **Novum**: cosmology, the Ban, Temporal Sickness, the Gift, the ending
+- [[06 - Characters]] — the nine-character roster, with combat identities
+- [[07 - Tarot Ledger]] — 🔒 every card appearance, and the one that's reserved
 
 ## 🗺️ Planning
 - [[Roadmap]] — phased delivery plan with exit criteria + demo milestone
@@ -28,10 +30,15 @@ Reusable note structures for content authoring:
 
 ## Status
 
-**Phase 0 — Foundation.** Repo scaffolding done. Next up: workshop the premise,
-then author the [[01 - Game Design Document]] and [[02 - Combat Design]].
+**Phase 0 — Foundation.** Repo scaffolded (Godot **4.7**). **Premise, world, story
+spine, roster, and both endings are drafted.**
 
-> [!todo] The one missing input
-> The **premise** is still an open slot — it's the piece only the creator can
-> provide. One line of *tone* + one line of *hook*. Everything in [[05 - World
-> Bible]] and much of the GDD waits on it.
+> [!todo] The gate on Phase 1
+> **[[02 - Combat Design]]** is the last doc blocking development. It needs:
+> the **time-pool economy** (Rewind/Haste/Slow/Stop share one pool), **timing
+> windows in milliseconds**, damage formulas, and the **nine action commands**
+> from [[06 - Characters]] turned into numbers.
+
+> [!warning] The docs are ahead of the build
+> The World Bible is ~1000 lines and Godot still opens an empty scene. That's fine —
+> but [[02 - Combat Design]] is what turns any of this into GDScript.
