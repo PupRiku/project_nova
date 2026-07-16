@@ -18,7 +18,7 @@
 | 2 | **Klaus** | Healer / Support | Medic kit, low magic DPS | **Triage hold-release** — peak = full heal | canon |
 | 3 | **Kate** | "Cook" — Control / Support | Buffs, debuffs, light heals | **Recipe sequence** — ordered presses | canon |
 | 4 | **Amos** | Paladin / Tank | Sword & shield | **Intercept** — parry *for* an ally | canon |
-| 5 | **Lyra (temp)** | Dancer — Ranged DPS / Support | Chakrams | **Throw + catch** — two windows per action | canon role, `PROPOSAL` name |
+| 5 | **Lyra (temp)** | Dancer — Ranged DPS / Support | Chakrams | **Throw + catch** — two windows; **dance = DDR-like rhythm** | canon role, `PROPOSAL` name |
 | 6 | **Vesper (temp)** | Elemental Mage | Crystal focus | **Charge & release** — overcharge backfires | `PROPOSAL` |
 | 7 | **Echo (temp)** | Non-elemental Mage | Force / sound / psyche | **Hold the loop** — repeating shot, unlocked by infection | `PROPOSAL` |
 | 8 | **Magpie (temp)** | Rogue / Thief | Daggers | **Flurry + steal window** | `PROPOSAL` |
@@ -28,6 +28,14 @@
 > The roster's real differentiation is **how each character asks the player to
 > read time**, per Pillar P2. Nobody is a reskin: Cam chains, Amos covers, Vale
 > gambles, Lyra throws *and* catches, Echo fights their own magic.
+
+> [!important] These map to a **fixed vocabulary of 8 input types**
+> → [[02 - Combat Design]] §3.0. Commands are **assigned from the vocabulary**, never
+> invented per move — 8 systems reused across ~70 moves, not 70 minigames.
+>
+> **The input type is also a difficulty selector:** with 9 characters and 3–4 active,
+> a player fields the hands they have. Someone who can't do rhythm never fields
+> **Lyra** and loses nothing. **This is only possible because the roster is 9.**
 
 ---
 
@@ -196,7 +204,9 @@ explosion hits — the crowd she was performing to becomes the casualty list.
 - **Action command:** *throw + catch* — **two windows per action.** Land the throw
   for damage; land the catch to keep the buff/tempo. Missing the catch costs the
   rider, not the hit. Chakrams are the only weapon in the roster that comes back.
-- **Dance:** rhythm sequences that buff an ally — a "partner" she's tethered to.
+- **Dance:** **DDR-like rhythm sequences** (vocabulary type #5) that buff an ally —
+  a "partner" she's tethered to. **Keep them short — four arrows, not sixteen**; the
+  ~1–2 s time budget applies (→ [[02 - Combat Design]] §3.0).
 
 **Arc `PROPOSAL`.** She and **Amos** are the party's two performers. One masks with
 volume, one with choreography. `TODO:` do they recognize it in each other?

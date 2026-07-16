@@ -20,15 +20,15 @@ groupings.
 - [ ] Confirm `project.godot` opens + runs clean in Godot 4.7 — **you**
 
 ## 🚧 The gate on Phase 1
-- [ ] **Author [[02 - Combat Design]]** — the last doc blocking development
-  - [ ] **Time-pool economy** — pool size, recharge rule, per-spell costs
-    (Rewind / Haste / Slow / Stop share one pool)
-  - [ ] **Timing windows in milliseconds** — offensive press, parry, dodge, block
-  - [ ] **Damage / healing / crit formulas**
-  - [ ] **The 9 action commands as numbers** → [[06 - Characters]]
-  - [ ] **Active party size: 3 or 4?** — decide by *feel* in Phase 1; it scales the
-        player's parry load
-  - [ ] **Overdrive** — fill rule, one per character
+- [x] **[[02 - Combat Design]] v0.1** — menu, turn order, Temporal Spring, Overdrive
+- [ ] **Resolve §6 — the Overdrive/Spring fill collision** ⚠️ *biggest open item*
+- [ ] **Resolve §8 — does Magic cost MP?** (13 bars is not a HUD)
+- [ ] **Rewind: turn action or meta-action?** (§4.2 — recommend meta)
+- [ ] **Where do Summons live in the menu?** (§2)
+- [ ] **Is Dodge distinct from Parry?** (§3.2)
+- [ ] **Numbers** — windows in ms, damage formulas, Spring costs, fill rates.
+      *Tuning targets; found by feel in Phase 1.*
+- [ ] **Turn-order queue UI** — Phase 1 dependency, not polish (§1)
 
 ## Phase 1 — Combat PoC
 - [ ] Turn state machine skeleton — `combat-systems`

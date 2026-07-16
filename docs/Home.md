@@ -33,12 +33,13 @@ Reusable note structures for content authoring:
 **Phase 0 — Foundation.** Repo scaffolded (Godot **4.7**). **Premise, world, story
 spine, roster, and both endings are drafted.**
 
-> [!todo] The gate on Phase 1
-> **[[02 - Combat Design]]** is the last doc blocking development. It needs:
-> the **time-pool economy** (Rewind/Haste/Slow/Stop share one pool), **timing
-> windows in milliseconds**, damage formulas, and the **nine action commands**
-> from [[06 - Characters]] turned into numbers.
-
-> [!warning] The docs are ahead of the build
-> The World Bible is ~1000 lines and Godot still opens an empty scene. That's fine —
-> but [[02 - Combat Design]] is what turns any of this into GDScript.
+> [!todo] Next
+> **[[02 - Combat Design]] v0.1** — structure decided, **numbers pending**. Three
+> things gate Phase 1:
+> 1. **§6 — the Overdrive/Spring fill collision.** As written they fill identically,
+>    which makes them one gauge shown twice.
+> 2. **§8 — does Magic cost MP?** If yes, the HUD is thirteen bars.
+> 3. **The turn-order queue is a Phase 1 dependency** — Haste/Slow/Stop are edits to
+>    a sequence the player must be able to see.
+>
+> Numbers are **tuning targets**, found by feel in Phase 1 — not decided on paper.

@@ -25,9 +25,19 @@ broken*. The disease is *time in the body*. No system is allowed to be
 thematically inert — if a mechanic has nothing to say about time, question it.
 
 ### P2 — Every turn is played, not chosen
-The menu is the **decision**; the timing window is the **execution**. There is no
-such thing as a passive turn — offense has a press, defense has a window. If a
-player can win by mashing confirm, we have failed.
+The menu is the **decision**; the timing window is the **execution**. Offense has a
+press; defense has a window. **If a player can win by mashing confirm, we have
+failed.** — *that sentence is the pillar's teeth; the rest is commentary.*
+
+> [!note] Refined — **the reliability principle**
+> v0.1 read *"there is no such thing as a passive turn."* **Overstated.** Healing and
+> self-use items correctly have **no** action command: they cost a consumable, cost a
+> turn, and don't advance the win, so they never threaten the mashing-confirm test.
+> Healing is the **panic button** — a minigame on it punishes a player for being in
+> trouble.
+>
+> Together with **Defend** (guaranteed mitigation, no parry), this forms a rule:
+> **offense demands skill; survival does not.** → [[02 - Combat Design]] §2.1
 
 ### P3 — Power is liability
 Cam's gift is illegal, feared, marked in the color of a plague — and **it is
@@ -77,8 +87,9 @@ lineage) and **defensive parry/dodge/block windows** (Expedition 33 lineage).
 Full spec → [[02 - Combat Design]].
 
 ### 5.2 Time Magic — *Cam's signature school* `DECIDED`
-Cam's gift is a **school of time magic**, not a single trick. All of it draws
-from **one shared resource pool**.
+Cam's gift is a **school of time magic**, not a single trick. All of it draws from
+**one shared resource: the Temporal Spring** (levels 1→6, growing across the
+campaign). → [[02 - Combat Design]] §4
 
 - **Rewind** — a **limited, rechargeable** in-battle rewind. Model reference:
   **Divine Pulse** (*Fire Emblem: Three Houses*) — a finite pool of charges that
@@ -106,6 +117,10 @@ last round).
 user. Confirm when defining combat identities.
 
 ### 5.3 Overdrive (temp) — universal limit gauge `RESOLVED`
+> [!warning] Open collision → [[02 - Combat Design]] §6: Overdrive and the Temporal
+> Spring currently **fill from the same three sources**, which makes them one gauge
+> displayed twice. **The last big open question in combat.**
+
 FFX-lineage special-attack gauge; introduced at the Ch. 1 boss.
 **Universal** — every party member has one. Because Cam's rewind now lives in the
 time-magic school with its own pool (§5.2), Overdrive is **freed** to be the
@@ -115,6 +130,8 @@ attack, not the rewind.
 
 ### 5.4 The Eight Tomes — summons `DECIDED`
 - **Eight guardian summons**, collected across the campaign. One per tome.
+- **Cast from a sub-menu under Magic**, appearing once available.
+  → [[02 - Combat Design]] §2
 - **No player-facing fusion.** Fusion is **dark magic** — the act that summoned
   Gio and split the planet. It exists in the world as *forbidden knowledge and
   plot*, not as a player system.
