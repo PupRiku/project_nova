@@ -117,9 +117,16 @@ last round).
 user. Confirm when defining combat identities.
 
 ### 5.3 Overdrive (temp) — universal limit gauge `RESOLVED`
-> [!warning] Open collision → [[02 - Combat Design]] §6: Overdrive and the Temporal
-> Spring currently **fill from the same three sources**, which makes them one gauge
-> displayed twice. **The last big open question in combat.**
+**Fills from damage dealt / taken / healing**, plus an **Overdrive Charger** — a
+player-chosen bonus source, set in the party menu, unlocked via progression.
+→ [[02 - Combat Design]] §5
+
+> [!success] Overdrive and the **Temporal Spring** are **inversely correlated**
+> Overdrive = *what the fight did to you* (damage). The Spring = *what you did to the
+> fight* (action commands). Parry everything → Spring full, Overdrive crawls. Whiff
+> everything → Overdrive charged, Spring dry.
+>
+> **A difficulty valve with no difficulty menu.** → [[02 - Combat Design]] §6
 
 FFX-lineage special-attack gauge; introduced at the Ch. 1 boss.
 **Universal** — every party member has one. Because Cam's rewind now lives in the
@@ -177,6 +184,11 @@ resource for her alone, and **active reload** (perfect-reload-or-jam) is her
 signature window — the party's highest risk/reward.
 
 ### 5.6 Progression
+> [!note] Partial answer available: the **Overdrive Charger** (→ [[02 - Combat Design]]
+> §5.2) gives the **eight non-Cam characters** a progression hook that isn't rising
+> numbers. *What my Overdrive feeds on* is more interesting to level into than *+3
+> STR*. This may be a real chunk of this section.
+
 `TODO:` Levels + stat growth, or milestone/story-gated growth? Decide against P1:
 whatever we choose should let the player feel *time fluency* increasing, not just
 numbers rising.

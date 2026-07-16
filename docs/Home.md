@@ -33,13 +33,15 @@ Reusable note structures for content authoring:
 **Phase 0 — Foundation.** Repo scaffolded (Godot **4.7**). **Premise, world, story
 spine, roster, and both endings are drafted.**
 
-> [!todo] Next
-> **[[02 - Combat Design]] v0.1** — structure decided, **numbers pending**. Three
-> things gate Phase 1:
-> 1. **§6 — the Overdrive/Spring fill collision.** As written they fill identically,
->    which makes them one gauge shown twice.
-> 2. **§8 — does Magic cost MP?** If yes, the HUD is thirteen bars.
-> 3. **The turn-order queue is a Phase 1 dependency** — Haste/Slow/Stop are edits to
->    a sequence the player must be able to see.
+> [!success] **[[02 - Combat Design]] v0.2 — no structural questions remain.**
+> Everything is decided, or is a **number Phase 1 will find by feel.**
+> **The docs no longer gate development.**
+
+> [!todo] Next — **Phase 1**
+> One hero, one enemy, one timed press, one parry window. Ugly placeholder art.
+> **Exit criterion: the timing windows feel good.**
 >
-> Numbers are **tuning targets**, found by feel in Phase 1 — not decided on paper.
+> Two things Phase 1 must include that aren't obvious:
+> - **The turn-order queue** — Haste/Slow/Stop are edits to a sequence the player has
+>   to *see*. Not polish; a dependency.
+> - **Audio cues on the windows** — players parry by sound as much as sight (P5).

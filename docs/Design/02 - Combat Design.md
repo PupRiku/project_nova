@@ -242,59 +242,137 @@ cap.**
 
 ---
 
-## 5. Overdrive `DECIDED (mechanism) / TODO (numbers)`
+## 5. Overdrive `DECIDED`
 
 **Universal** — every party member has one. FFX lineage. Introduced at the Ch. 1 boss.
 
-**Fills on three sources, each at a different rate, scaled by the damage number:**
+### 5.1 Base fill — three sources
+Each at a **different rate**, scaled by the damage number:
 1. **Dealing damage**
 2. **Taking damage**
 3. **Magical healing**
 
-`TODO:` name (temp: "Overdrive"). One Overdrive per character × 9 → real animation
-scope.
+**This is the default, and it is automatic.** A player who never opens a menu still
+charges Overdrive by playing.
 
-> [!question] FFX lets the player **choose the fill mode** per character
-> (Warrior/Stoic/Healer/…). A depth knob available if wanted; a scope cost if taken.
+### 5.2 The **Overdrive Charger** `DECIDED`
+Each party member also gets a **bonus fill source of the player's choosing**, set in
+the **party menu**. Unlocked via **level up, rewards, etc.**
 
----
+**Two classes of charger:**
 
-## 6. ⚠️ Overdrive vs. the Spring — **the open problem**
+| Class | What | Examples |
+|---|---|---|
+| **Boost** — a *multiplier* | increase earnings from one of the three base sources | "damage taken ×2" |
+| **New source** — a *new income stream* | add a **4th** fill source | **presses landed** · **parried hits** · **specific ability uses** · **MP spent** |
 
-> [!danger] As written, they fill **identically** — which makes them **one gauge
-> displayed twice**
-> Both fill from *{dealing damage, taking damage, magical healing}*, simultaneously.
-> The player never **chooses** between them: both rise, both get spent. **Two bars of
-> UI, one decision.** No opportunity cost exists *between* the two resources.
+> [!warning] The two classes are **not equal** — balance accordingly
+> **Boost** is a multiplier on income you already have. **New source** changes *how
+> the character is played.* New-source chargers should be **rarer, later, and more
+> expensive.**
 
-### `PROPOSAL` — fill the Spring from **successful action commands**
-Not from damage. From **reading time correctly.** Land the press, land the parry →
-the Spring rises.
-
-> [!success] Why this is the right fix
-> **Pillar P1** says time is the mechanic *and* the meaning. As written, the Spring
-> is an MP bar with a good name. Filled by action commands, it closes the loop that
-> **is** the thesis:
+> [!danger] Steal FFX's system — **and dodge its known failure**
+> In FFX, some Overdrive modes are simply better: **Stoic** (damage taken) is
+> famously farmable, **Warrior** is the boring default, and most players find the one
+> good answer and stop thinking. **Depth on paper; one correct answer in practice.**
 >
+> **The fix: role synergy.** Each character's *natural* charger should fall out of
+> their job —
+> | Character | Natural charger |
+> |---|---|
+> | **Amos** (tank) | damage taken |
+> | **Klaus** (healer) | healing |
+> | **Vale** (DPS) | damage dealt |
+> | **Vesper / Echo** (mages) | **MP spent** |
+>
+> Now there is **no universal best** — the best answer *differs per character*, and
+> the real choice becomes **lean into your role, or against it.** The interesting
+> builds are the counter-intuitive ones: **a healer who charges off parried hits** is
+> a player expressing something.
+>
+> **Encounter-dependence helps too.** A boss that swings five times makes
+> damage-taken chargers shine. Because chargers are swappable in the party menu, they
+> become **per-fight prep**, not a one-time solve.
+
+> [!important] Apply the **§3.0 lesson**: chargers are a **shared pool**
+> Unlocked over the campaign, **equippable by anyone** — *not bespoke per character.*
+> **Ten chargers × nine characters = ten things to build, not ninety.** Same
+> reasoning that saved us from seventy minigames.
+> *(Character-exclusive chargers can exist later as rewards — but the pool is the
+> default.)*
+
+> [!success] The floor is automatic; the ceiling is opt-in
+> The **base fill (§5.1) is the difficulty valve** — see §6. It works for a player who
+> never opens the party menu. **The Charger lets an engaged player override it** and
+> double down on skill (*presses landed*, *parried hits*).
+>
+> **Safety net by default. Expression by choice.** This shape emerged by accident —
+> **don't balance it away.**
+
+> [!note] This may be a chunk of **progression** (→ [[01 - Game Design Document]] §5.6,
+> still `TODO`)
+> Chargers give the **eight non-Cam characters** a progression hook that isn't rising
+> numbers. ***What my Overdrive feeds on*** is a more interesting thing to level into
+> than *+3 STR*.
+
+`TODO:` name (temp: "Overdrive"; "Overdrive Charger" follows it).
+`TODO:` how many chargers in the pool? Unlock cadence?
+`TODO:` **does Cam get a Charger** for their Overdrive, or is the Spring their
+customization?
+`TODO:` One Overdrive **attack** per character × 9 → real animation scope.
+
+## 6. Overdrive vs. the Spring — **RESOLVED** ✅
+
+> [!note] The problem (for the record)
+> v0.1 had **both gauges filling from the same three sources**, simultaneously. The
+> player never *chose* between them — both rose, both got spent. **Two bars of UI,
+> one decision**, and the Spring was mechanically a second MP bar.
+>
+> **And a perverse incentive hid inside it:** Overdrive fills on *taking damage*, and
+> a successful parry is a **full block**. So every time the player did the thing the
+> whole game is built around, **they starved their own Overdrive.** Being good at
+> Project Nova was punished.
+
+### The resolution `DECIDED`
+
+| | **Overdrive** | **Temporal Spring** |
+|---|---|---|
+| **Fills from** | damage dealt · damage taken · healing *(+ the Charger, §5.2)* | **successful action commands** — presses landed, parries hit |
+| **Whose** | everyone | **Cam only** |
+| **Means** | **what the fight did to you** — *reactive* | **what you did to the fight** — *earned* |
+
+**The action-command fill is Cam-only.** Others reach it — if they want — through a
+**new-source Charger** (§5.2). *Cam is the natural time-reader; the rest can train
+toward it.*
+
+> [!success] 🎚️ They are now **inversely correlated** — a difficulty valve with no
+> difficulty menu
+> - **Parry everything** → you take no damage → **Overdrive crawls** — but the
+>   **Spring is full.**
+> - **Whiff every window** → you eat every hit → **the Spring is dry** — but
+>   **Overdrive is charged and ready.**
+>
+> The player who is struggling gets handed **limit breaks**. The player who is
+> reading the fight gets handed **time magic**. **Both always have something; neither
+> is ever locked out.** The game meets people where they are — **without a setting, a
+> slider, or an apology.**
+>
+> It also **kills the perverse incentive**: parrying no longer starves you, it
+> **pays you in a different currency.**
+
+> [!success] And the Spring becomes the thesis instead of a bar — **Pillar P1**
 > **read time well → earn time magic → spend it → read time better.**
 >
-> The player's *own fluency* generates Cam's power. And the Spring's growth across
-> the campaign stops being a stat — it becomes **a scoreboard of the player's skill
-> at the thing the game is about.**
->
-> It also cleanly separates the two gauges:
-> - **Overdrive = what the fight did to you.** (damage/healing — reactive)
-> - **The Spring = what you did to the fight.** (action commands — earned)
+> The player's own fluency generates Cam's power. The Spring's growth across the
+> campaign stops being a stat and becomes **a scoreboard of the player's skill at the
+> thing the game is about.**
 
 > [!warning] Guardrail — Pillar **P5**
-> Give the Spring a **small baseline fill** so a struggling player is never locked
-> out of the mechanic. Skill should *accelerate* the Spring, not gate it.
+> Give the Spring a **small baseline tick** so a bad round never zeroes it out. Skill
+> should **accelerate** the Spring, not **gate** it.
 
-> [!question] Whose action commands fill it? `TODO`
-> Cam's only *(cleaner thematically — it's Cam's Gift)*, or the whole party's
-> *(more generous; the player parries for everyone anyway)*?
-
----
+`TODO:` fill rates. Baseline tick size. Does a *partial* success (early/late press)
+fill partially?
 
 ## 7. Damage & healing formulas `TODO`
 Pure, unit-testable functions. No formula in UI code.
@@ -347,13 +425,12 @@ Hitstop, screen shake, flash, sound layering — what sells the timing.
 ---
 
 ## Open questions
-1. **§6 — the Overdrive/Spring fill collision.** ⚠️ **The biggest open item.** It
-   decides whether the Spring means anything, or is an MP bar with a good name.
-2. **§3.2 — is Dodge distinct from Parry?**
-3. **§3.3 — aiming: moving reticle** *(collapses into Sweet-spot)* **or free aim**
+1. **§3.2 — is Dodge distinct from Parry?**
+2. **§3.3 — aiming: moving reticle** *(collapses into Sweet-spot)* **or free aim**
    *(a true 8th type)*?
-4. **§3.0 — confirm the ~1–2 s time budget** for action commands.
-5. **§2 — does Time get its own menu entry**, or sit inside Magic beside MP spells?
+3. **§3.0 — confirm the ~1–2 s time budget** for action commands.
+4. **§2 — does Time get its own menu entry**, or sit inside Magic beside MP spells?
+5. **§5.2 — how many Chargers in the pool?** Unlock cadence? **Does Cam get one?**
 6. **Summon economy** — MP? Its own cost? → [[01 - Game Design Document]] §5.4
 7. **Active party: 3 or 4?** Decide by **feel** in Phase 1 — it scales parry load.
 8. All **numbers**. Every one. They're tuning targets → Phase 1.
@@ -361,4 +438,9 @@ Hitstop, screen shake, flash, sound layering — what sells the timing.
 *Resolved: Summons → Magic sub-menu (§2) · Rewind → meta-action (§4.2) · MP → yes;
 HUD is numbers/bar/pips (§8) · Items → healing none, combat aim (§3.3) · **the
 reliability principle** (§2.1) · **the action-command vocabulary — 8 types, not 70
-minigames** (§3.0).*
+minigames** (§3.0) · **§6 — the Overdrive/Spring collision ✅ RESOLVED** · **the
+Overdrive Charger** (§5.2).*
+
+> [!success] **No structural questions remain in combat.** Everything above is either
+> decided, or a **number Phase 1 will find by feel.** → this doc no longer gates
+> development.
