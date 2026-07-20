@@ -1,8 +1,10 @@
-; Godot 4 project configuration.
-; This is intentionally minimal — a working skeleton. Autoloads,
-; the full input map, display settings, and layers get filled in
-; during Phase 0/1. Edit via the Godot editor where possible so the
-; editor keeps this file well-formed.
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
 
 config_version=5
 
@@ -10,7 +12,7 @@ config_version=5
 
 config/name="Project Nova"
 config/description="A 2D turn-based RPG where every attack and defense is a timed act of reading time itself. Set on Novum."
-run/main_scene=""
+run/main_scene="res://scenes/battle/battle.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,18 +21,16 @@ config/icon="res://icon.svg"
 window/size/viewport_width=640
 window/size/viewport_height=360
 window/stretch/mode="canvas_items"
-window/stretch/aspect="keep"
 
 [input]
 
-; Core action-command input. The single "timing" button is the heart
-; of the Paper-Mario press and the Expedition-33 parry window.
 ui_action_command={
 "deadzone": 0.5,
-"events": []
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
 }
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
