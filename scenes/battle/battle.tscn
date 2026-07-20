@@ -1,76 +1,66 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://scripts/combat/battle.gd" id="1"]
 [ext_resource type="Script" path="res://scripts/combat/battle_state_machine.gd" id="2"]
 [ext_resource type="Script" path="res://scripts/core/beep_player.gd" id="3"]
-[ext_resource type="Script" path="res://scripts/ui/debug_overlay.gd" id="4"]
-[ext_resource type="Resource" path="res://resources/characters/hero.tres" id="5"]
-[ext_resource type="Resource" path="res://resources/characters/enemy.tres" id="6"]
-[ext_resource type="Resource" path="res://resources/moves/hero_attack.tres" id="7"]
-[ext_resource type="Resource" path="res://resources/enemies/enemy_swing.tres" id="8"]
+[ext_resource type="Script" path="res://scripts/ui/turn_queue_ui.gd" id="4"]
+[ext_resource type="Script" path="res://scripts/ui/battle_menu_ui.gd" id="5"]
+[ext_resource type="Script" path="res://scripts/ui/debug_overlay.gd" id="6"]
+[ext_resource type="Resource" path="res://resources/encounters/test_3v2.tres" id="7"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1")
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("2")
-hero_data = ExtResource("5")
-enemy_data = ExtResource("6")
-hero_move = ExtResource("7")
-enemy_attack = ExtResource("8")
+encounter = ExtResource("7")
 resolve_pause = 0.7
-
-[node name="Hero" type="ColorRect" parent="."]
-offset_left = 90.0
-offset_top = 180.0
-offset_right = 150.0
-offset_bottom = 260.0
-color = Color(0.3, 0.5, 0.9, 1)
-
-[node name="Enemy" type="ColorRect" parent="."]
-offset_left = 470.0
-offset_top = 160.0
-offset_right = 540.0
-offset_bottom = 260.0
-color = Color(0.9, 0.3, 0.3, 1)
 
 [node name="Beep" type="AudioStreamPlayer" parent="."]
 script = ExtResource("3")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="HeroHP" type="Label" parent="UI"]
-offset_left = 20.0
-offset_top = 300.0
-offset_right = 300.0
-offset_bottom = 330.0
-text = "Hero"
+[node name="Combatants" type="Control" parent="UI"]
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
 
-[node name="EnemyHP" type="Label" parent="UI"]
-offset_left = 380.0
-offset_top = 20.0
-offset_right = 620.0
-offset_bottom = 50.0
-horizontal_alignment = 2
-text = "Dummy"
+[node name="QueueUI" type="Control" parent="UI"]
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 626.0
+offset_bottom = 36.0
+mouse_filter = 2
+script = ExtResource("4")
 
 [node name="Prompt" type="Label" parent="UI"]
-offset_left = 170.0
-offset_top = 20.0
-offset_right = 470.0
-offset_bottom = 50.0
+offset_left = 160.0
+offset_top = 36.0
+offset_right = 480.0
+offset_bottom = 58.0
 horizontal_alignment = 1
 text = "..."
 
-[node name="DebugOverlay" type="Control" parent="UI"]
-script = ExtResource("4")
-offset_left = 20.0
-offset_top = 70.0
+[node name="MenuUI" type="Control" parent="UI"]
+offset_left = 430.0
+offset_top = 166.0
 offset_right = 620.0
-offset_bottom = 200.0
+offset_bottom = 320.0
+mouse_filter = 2
+script = ExtResource("5")
 
-[node name="Log" type="Label" parent="UI/DebugOverlay"]
-offset_right = 600.0
-offset_bottom = 130.0
-theme_override_colors/font_color = Color(0.6, 1, 0.6, 1)
-text = "timing log — press to begin"
+[node name="DebugOverlay" type="Control" parent="UI"]
+offset_left = 16.0
+offset_top = 292.0
+offset_right = 624.0
+offset_bottom = 360.0
+mouse_filter = 2
+script = ExtResource("6")
+
+[node name="TargetCursor" type="Label" parent="UI"]
+visible = false
+offset_right = 90.0
+offset_bottom = 20.0
+modulate = Color(1, 0.35, 0.35, 1)
+text = "▼ target"

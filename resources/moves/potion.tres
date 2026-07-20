@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MoveData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/move_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Potion"
+category = 3
+target = 1
+effect = 1
+damage_base = 14
+uses_press = false
+press_bonus_mult = 1.0

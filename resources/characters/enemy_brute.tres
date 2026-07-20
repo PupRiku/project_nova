@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CombatantData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/combatant_data.gd" id="1"]
+[ext_resource type="Resource" path="res://resources/enemies/brute_smash.tres" id="2"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Brute"
+max_hp = 34
+speed = 4
+color = Color(0.7, 0.2, 0.25, 1)
+moves = []
+enemy_attacks = [ExtResource("2")]

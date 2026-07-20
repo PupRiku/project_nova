@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CombatantData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/combatant_data.gd" id="1"]
+[ext_resource type="Resource" path="res://resources/enemies/enemy_swing.tres" id="2"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Goblin"
+max_hp = 22
+speed = 7
+color = Color(0.85, 0.3, 0.3, 1)
+moves = []
+enemy_attacks = [ExtResource("2")]

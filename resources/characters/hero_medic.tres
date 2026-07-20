@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CombatantData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/combatant_data.gd" id="1"]
+[ext_resource type="Resource" path="res://resources/moves/basic_attack.tres" id="2"]
+[ext_resource type="Resource" path="res://resources/moves/potion.tres" id="3"]
+[ext_resource type="Resource" path="res://resources/moves/defend.tres" id="4"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Medic"
+max_hp = 28
+speed = 5
+color = Color(0.3, 0.75, 0.5, 1)
+moves = [ExtResource("2"), ExtResource("3"), ExtResource("4")]
+enemy_attacks = []
