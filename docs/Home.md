@@ -40,13 +40,13 @@ world, roster, and both endings are all in place.
 > Structure was already decided; Phase 1 confirmed the timing *feel*. Economy numbers
 > (Spring / Overdrive / MP) remain tuning targets for later phases.
 
-> [!todo] Next — **Phase 2: Combat prototype**
-> Real party, turn order, multiple move types, status effects, a resource system,
-> several action-command variants, victory/defeat flow — authored as `.tres` data.
-> **Exit:** a full multi-enemy battle is playable and readable start to finish.
+> [!todo] Next — **Phase 2A: party, queue, targeting & menu** *(no new systems)*
+> Scale Phase 1's 1v1 into a real multi-hero / multi-enemy battle: a fielded party,
+> the **visible turn-order queue**, N-combatant targeting, and the full battle menu
+> (incl. Defend). **No** Spring / time magic / Overdrive / MP / statuses yet — those
+> are **2B**, built on 2A's proven skeleton. See [[Roadmap]] for the full split.
+> **Exit:** a multi-enemy, multi-hero battle is playable and readable start to finish.
 >
-> Two things it must include that aren't obvious:
-> - **The turn-order queue** — Haste/Slow/Stop are edits to a sequence the player has
->   to *see*. Not polish; a dependency.
-> - Keep spreading the **§3.0 input vocabulary** across the roster so no input type
->   is mandatory (free accessibility, P5).
+> One thing it must include that isn't obvious:
+> - **The turn-order queue** — Haste/Slow/Stop (2B) are edits to a sequence the player
+>   has to *see*. It ships in 2A first, or the whole time-magic school is illegible.

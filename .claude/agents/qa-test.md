@@ -18,9 +18,16 @@ thinking.
 - Regression checks: when a change lands, verify related behavior still holds.
 
 ## Rules of engagement
-- Tests assert against the **design-doc values** (`docs/Design/02 - Combat
-  Design.md`), so they catch drift between intended and actual behavior. Cite the
-  value a test enforces.
+- **Assert behaviour and relationships, never specific tuning values.** Every
+  timing/damage/HP number in `docs/Design/02 - Combat Design.md` is a *tuning
+  target* that changes constantly — a test pinned to `250 ms` or `×1.5` breaks on
+  every tuning session and trains people to ignore red. Test the *rule* instead:
+  an in-window press → HIT and an out-of-window press → miss (whatever the window
+  is); a landed press out-damages a miss (whatever the multiplier); a parry blocks
+  fully (→ 0); timing is frame-rate independent (N small `advance`s ≡ one big one).
+  Build fixtures with arbitrary numbers and assert the relation, not the constant.
+  If a rule *is* fixed by design (parry = full block, KO at 0 HP), assert that rule
+  directly and cite the doc section — but that's the invariant, not a tuned value.
 - You **write and modify tests**, not gameplay source. If a test reveals a bug,
   report it with a minimal reproduction and hand the fix to the owning agent
   (combat-systems or godot-engineer) rather than patching source yourself.

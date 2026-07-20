@@ -25,11 +25,43 @@ attack with a defensive parry window. Placeholder art. Nothing else.
 > behaviour tests landed (PR #1). Everything downstream can now assume the core
 > loop is fun.
 
-## Phase 2 — Combat prototype 🎯 *current*
-Real party, turn order, multiple move types, status effects, a resource system,
-several action-command variants, victory/defeat flow. Combat authored as `.tres`
-data, not hard-code.
-**Exit:** a full multi-enemy battle is playable and readable start to finish.
+## Phase 2 — Combat prototype
+Split into two sub-phases so the **structure** (party, queue, targeting, menu) is
+proven and stable *before* the **systems** (Spring, Overdrive, statuses) build on
+top of it. Land 2A completely, then 2B — don't interleave.
+
+### Phase 2A — Party, queue, targeting & menu 🎯 *current* — **no new systems**
+The battle *skeleton* scaled up from Phase 1's 1v1, with **zero** new mechanics:
+- **Real party** — multiple heroes fielded together (3 or 4 active — decide by feel).
+- **Visible turn-order queue** — the FFX-style portrait queue (Combat Design §1). A
+  hard dependency, not polish: Cam's Haste/Slow/Stop in 2B are *edits to a sequence
+  the player must see*, so the queue ships here first.
+- **N-combatant targeting** — pick a target among many; parry load scales with active
+  party size (§3.3 "who parries?"). The offensive press and defensive parry from
+  Phase 1 carry over unchanged.
+- **Full battle menu** — Attack / Magic / Skills / Item / Defend wired up (§2), even
+  where sub-lists are near-empty. **Defend** lands here (guaranteed mitigation, §2.1).
+- Combat authored as `.tres` data, not hard-code.
+
+**Explicitly NOT in 2A:** the Temporal Spring, time magic, Overdrive, MP, status
+effects. Those are 2B. 2A only proves multi-combatant flow reads clearly.
+**Exit:** a full multi-enemy, multi-hero battle is playable and readable start to
+finish — turn order visible, targeting clear, every menu entry reachable.
+
+### Phase 2B — The systems layer
+The mechanics that make combat *Nova's*, built on 2A's stable skeleton:
+- **MP** and the **Magic** menu populated (§8).
+- **Cam's Temporal Spring** — levels 1→6 as pips, and the time spells **Haste / Slow
+  / Stop / Rewind** as *edits to the visible queue* from 2A (§4). Rewind as a
+  meta-action (§4.2).
+- **Overdrive** — universal gauge, three fill sources, the first Charger (§5), and
+  its inverse-correlation with the Spring (§6).
+- **Status effects** — the §9 table: name · effect · duration · stacking · chance.
+- Several more **action-command variants** from the §3.0 vocabulary, spread across
+  the roster so no input type is mandatory (P5).
+
+**Exit:** a fight exercising time magic + Overdrive + statuses is playable and
+readable, and the Spring/Overdrive economy *feels* right (a tuning gate, like Phase 1).
 
 ## Phase 3 — Exploration & shell prototype
 Overworld movement, encounter triggers, the menu system (party, inventory,
