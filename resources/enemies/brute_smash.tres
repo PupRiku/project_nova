@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="EnemyAttackData" load_steps=4 format=3]
+[gd_resource type="Resource" script_class="EnemyAttackData" format=3 uid="uid://b6hm0nnofplo5"]
 
-[ext_resource type="Script" path="res://scripts/data/enemy_attack_data.gd" id="1"]
-[ext_resource type="Script" path="res://scripts/data/action_command_timing.gd" id="2"]
+[ext_resource type="Script" uid="uid://74qxw6p48sjm" path="res://scripts/data/enemy_attack_data.gd" id="1"]
+[ext_resource type="Script" uid="uid://gcggfsd7pqru" path="res://scripts/data/action_command_timing.gd" id="2"]
 
 [sub_resource type="Resource" id="parry_timing"]
 script = ExtResource("2")

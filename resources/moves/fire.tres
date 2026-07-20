@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="MoveData" load_steps=4 format=3]
+[gd_resource type="Resource" script_class="MoveData" format=3 uid="uid://b85rwjmscexrt"]
 
-[ext_resource type="Script" path="res://scripts/data/move_data.gd" id="1"]
-[ext_resource type="Script" path="res://scripts/data/action_command_timing.gd" id="2"]
+[ext_resource type="Script" uid="uid://ckm2jk0xyf4da" path="res://scripts/data/move_data.gd" id="1"]
+[ext_resource type="Script" uid="uid://gcggfsd7pqru" path="res://scripts/data/action_command_timing.gd" id="2"]
 
 [sub_resource type="Resource" id="press"]
 script = ExtResource("2")
@@ -12,9 +12,6 @@ window_duration = 0.22
 script = ExtResource("1")
 display_name = "Fire"
 category = 1
-target = 0
-effect = 0
 damage_base = 14
-uses_press = true
 press = SubResource("press")
 press_bonus_mult = 1.6
