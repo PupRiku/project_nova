@@ -14,8 +14,11 @@ Expedition 33). Built in **Godot 4.7 / GDScript**, desktop-first.
 
 ## Status
 
-**Phase 0 — Foundation.** Scaffolding complete. Premise, world, story spine, roster,
-and both endings are drafted. **`02 - Combat Design` is the gate on Phase 1.**
+**Phase 1 — Combat PoC ✅ done** *(make-or-break gate passed, 2026-07-20)*. A playable
+one-hero/one-enemy fight with a timed offensive **press** and a defensive **parry**
+window, audio cues, and a debug timing overlay — and **the timing feels good**, which
+was Phase 1's entire exit criterion. Next up: **Phase 2 — Combat prototype** (real
+party, turn order, multiple move types).
 
 See `docs/Planning/Roadmap.md`.
 
@@ -25,6 +28,12 @@ See `docs/Planning/Roadmap.md`.
    pinned in `.github/workflows/ci.yml`.
 2. Install [Git LFS](https://git-lfs.com/) once per machine, then `git lfs install`.
 3. Clone, then open `project.godot` in Godot.
+4. **Play the combat PoC:** press <kbd>F5</kbd> (main scene is `scenes/battle/battle.tscn`).
+   <kbd>Space</kbd> commits Attack then times the press; <kbd>Space</kbd> parries; <kbd>Space</kbd> retries after a win/loss.
+5. **Tune it live:** with the game running, open a `.tres` in `resources/` and scrub a
+   value — the change lands on the next turn, no restart.
+6. **Run tests:** enable **GUT** (Project Settings → Plugins), then point the GUT panel
+   at `res://tests` and Run.
 
 ## Repository layout
 
@@ -47,7 +56,7 @@ read the Markdown directly. **Start at `docs/Home.md`.**
 | Doc | Status |
 |---|---|
 | **01 — Game Design Document** — pillars, core loop, scope guardrails | v0.2 |
-| **02 — Combat Design** — timing windows, formulas, the action-command model | ⚠️ outline — *next up* |
+| **02 — Combat Design** — timing windows, formulas, the action-command model | v0.2 — core timing validated |
 | **03 — Technical Design** — architecture, data, save system | outline |
 | **04 — Art & Audio Direction** — visual target, sprite specs, card art | outline + constraints |
 | **05 — World Bible** — Novum: cosmology, the Ban, the Gift, Vaik, both endings | v0.2 |

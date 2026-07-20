@@ -30,18 +30,23 @@ Reusable note structures for content authoring:
 
 ## Status
 
-**Phase 0 — Foundation.** Repo scaffolded (Godot **4.7**). **Premise, world, story
-spine, roster, and both endings are drafted.**
+**Phase 1 — Combat PoC ✅ done (make-or-break gate passed, 2026-07-20).** The core
+loop is proven: one hero vs one enemy, timed offensive press + defensive parry,
+audio cues, debug overlay, win/lose. **The timing feels good.** Validated values
+folded into [[02 - Combat Design]] §3.1–3.2, §7. Foundation (Phase 0) and premise,
+world, roster, and both endings are all in place.
 
-> [!success] **[[02 - Combat Design]] v0.2 — no structural questions remain.**
-> Everything is decided, or is a **number Phase 1 will find by feel.**
-> **The docs no longer gate development.**
+> [!success] **[[02 - Combat Design]] v0.2 — core press/parry timing validated.**
+> Structure was already decided; Phase 1 confirmed the timing *feel*. Economy numbers
+> (Spring / Overdrive / MP) remain tuning targets for later phases.
 
-> [!todo] Next — **Phase 1**
-> One hero, one enemy, one timed press, one parry window. Ugly placeholder art.
-> **Exit criterion: the timing windows feel good.**
+> [!todo] Next — **Phase 2: Combat prototype**
+> Real party, turn order, multiple move types, status effects, a resource system,
+> several action-command variants, victory/defeat flow — authored as `.tres` data.
+> **Exit:** a full multi-enemy battle is playable and readable start to finish.
 >
-> Two things Phase 1 must include that aren't obvious:
+> Two things it must include that aren't obvious:
 > - **The turn-order queue** — Haste/Slow/Stop are edits to a sequence the player has
 >   to *see*. Not polish; a dependency.
-> - **Audio cues on the windows** — players parry by sound as much as sight (P5).
+> - Keep spreading the **§3.0 input vocabulary** across the roster so no input type
+>   is mandatory (free accessibility, P5).

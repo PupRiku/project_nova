@@ -1,15 +1,20 @@
 # 02 — Combat Design
 
-> [!abstract] Status: **draft v0.1** — structure decided, **numbers pending**
-> The core hook lives here. This doc holds the values `combat-systems` implements
-> and `qa-test` asserts against.
+> [!abstract] Status: **draft v0.2** — structure decided; **core press/parry timing
+> validated in Phase 1** (2026-07-20). Economy numbers (MP, Spring, Overdrive) still pending.
+> The core hook lives here. This doc holds the values `combat-systems` implements;
+> `qa-test` asserts the *behaviour* around them (in-window → hit, parry → full block,
+> frame-rate independence), **not** the specific numbers — so tuning never breaks tests.
 > Roster & timing identities → [[06 - Characters]] · Pillars → [[01 - Game Design Document]]
 
 > [!important] Numbers here are **tuning targets, not decisions**
-> [[Roadmap]] Phase 1's exit criterion is *"the timing windows **feel** good."* No
-> millisecond value in this doc is correct until it's been played. The job of the
-> numbers below is to be **specific enough to build and tune**, not to be right.
-> **Expect every one of them to change in Phase 1. That's the process working.**
+> [[Roadmap]] Phase 1's exit criterion was *"the timing windows **feel** good."* No
+> millisecond value is correct until it's been played. The job of the numbers is to be
+> **specific enough to build and tune**, not to be right.
+> **✅ Phase 1 result:** the press/parry values marked *"PoC baseline"* below were
+> played in the one-hero/one-enemy slice and **felt good** — they're now validated
+> starting points, not guesses. They will still move as real characters, stats, and
+> encounters arrive; the *economy* numbers (Spring/Overdrive/MP costs) remain untested.
 
 ---
 
@@ -149,18 +154,24 @@ axis, §3.2 — not here.)*
 ### 3.1 Offensive — the press
 Timed input that boosts an action. **Reference: Paper Mario.**
 - Input type: **assign from §3.0's vocabulary** → [[06 - Characters]]
-- **Window:** `TODO` ms — *tuning target*
-- Success effect: `TODO` (+X% damage / extra hit)
+- **Window:** **250 ms open**, opening **0.6 s** after the attack is committed — that
+  0.6 s is the wind-up before the cue fires. ✅ *Phase 1 PoC baseline (felt good).*
+- Success effect: **×1.5 damage** (+50%) on an in-window press; an early or late
+  press deals base damage (no partial tier in Phase 1). ✅ *Phase 1 PoC baseline.*
 - Feedback: visual **and audio** cue on window and on success. **Audio is a P5
-  obligation, not polish** — players parry by sound as much as sight.
+  obligation, not polish** — players parry by sound as much as sight. *(Phase 1 uses
+  distinct beep pitches: cue / success / miss.)*
 
 ### 3.2 Defensive — the parry
 Timed reaction to incoming attacks. **Reference: Clair Obscur: Expedition 33.**
-- **Parry window:** `TODO` ms → **full damage block**
+- **Parry window:** **200 ms open** → **full damage block**. ✅ *Phase 1 PoC baseline
+  (felt good). Slightly tighter than the offensive press, as a reaction should be.*
 - **Dodge:** `TODO` — is this distinct from parry, or is parry the only defensive
   timing? *(Creator's list names only parry. Decide.)*
 - **Block:** covered by **Defend** (§2.1), which is a menu action, not a window.
-- **Telegraph:** how an incoming attack is signalled, and its lead time. `TODO`
+- **Telegraph:** two tunable knobs, kept separate so warning and window placement
+  tune independently: a **0.5 s** readable wind-up (enemy "declares"), then a further
+  **0.7 s** before the 200 ms parry window opens. ✅ *Phase 1 PoC baseline.*
 
 ### 3.3 Items `DECIDED`
 | Item type | Action command |
@@ -374,11 +385,15 @@ toward it.*
 `TODO:` fill rates. Baseline tick size. Does a *partial* success (early/late press)
 fill partially?
 
-## 7. Damage & healing formulas `TODO`
-Pure, unit-testable functions. No formula in UI code.
-- Base damage = `TODO`
+## 7. Damage & healing formulas `PARTIAL` — Phase 1 established the core; rest `TODO`
+Pure, unit-testable functions (`scripts/combat/combat_math.gd`). No formula in UI code.
+- Base damage = **flat per-move `damage_base`** for now (Phase 1 PoC: hero attack 10,
+  enemy attack 8). **No attacker/defender stat formula yet** — that arrives with real
+  stats in Phase 2. `TODO`
 - Crit rule = `TODO`
-- **Action-command modifier application order** = `TODO`
+- **Action-command modifier application order** = a landed press multiplies base by the
+  move's `press_bonus_mult`, rounded: `round(base × mult)` (Phase 1: ×1.5). ✅
+- **Parry** = full block: incoming damage = **0** on a successful parry. ✅
 - Healing = `TODO`
 - Defend mitigation = `TODO`
 

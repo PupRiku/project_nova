@@ -48,7 +48,7 @@ out of date and should be updated in the same change. Never silently diverge.
 | Doc | Status | What it's for |
 |---|---|---|
 | `01 - Game Design Document` | **v0.2** | pillars, core loop, systems, **scope guardrails** |
-| `02 - Combat Design` | ⚠️ **outline only** | **the gate on Phase 1.** Timing values, time-pool economy, 9 action commands |
+| `02 - Combat Design` | **v0.2** | **Phase 1 gate — passed.** Core press/parry timing validated (§3.1–3.2, §7); economy numbers still pending |
 | `03 - Technical Design` | ⚠️ outline | architecture, data, save system |
 | `04 - Art & Audio Direction` | outline + hard constraints | visual target, sprite specs, **card art** |
 | `05 - World Bible` | **v0.2, extensive** | canon: cosmology, the Ban, the Gift, Vaik, both endings |

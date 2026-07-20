@@ -11,19 +11,21 @@ first: *does the combat feel good?*
 
 ---
 
-## Phase 0 — Foundation ✅ (in progress)
+## Phase 0 — Foundation ✅ done
 Repo, Godot project skeleton, `.gitignore` + Git LFS, `CLAUDE.md`, subagents,
 CI smoke test, and this documentation vault.
-**Exit:** project opens, runs an empty scene, and pushes clean to GitHub.
+**Exit:** project opens, runs an empty scene, and pushes clean to GitHub. ✅
 
-## Phase 1 — Combat PoC / vertical slice 🎯 *make-or-break*
+## Phase 1 — Combat PoC / vertical slice ✅ done *(make-or-break — gate passed 2026-07-20)*
 One hero, one enemy, one attack with an offensive timed press, one incoming
 attack with a defensive parry window. Placeholder art. Nothing else.
-**Exit:** you can win or lose one fight, **and the timing windows feel good.**
-> If they don't feel good, we stay here and tune. This phase protects the whole
-> project — everything downstream assumes the core loop is fun.
+**Exit:** you can win or lose one fight, **and the timing windows feel good.** ✅
+> Gate passed: the timing felt good in play. Validated PoC values folded into
+> [[02 - Combat Design]] §3.1–3.2, §7. Pure timing/damage logic + turn FSM + GUT
+> behaviour tests landed (PR #1). Everything downstream can now assume the core
+> loop is fun.
 
-## Phase 2 — Combat prototype
+## Phase 2 — Combat prototype 🎯 *current*
 Real party, turn order, multiple move types, status effects, a resource system,
 several action-command variants, victory/defeat flow. Combat authored as `.tres`
 data, not hard-code.
