@@ -17,8 +17,9 @@ Expedition 33). Built in **Godot 4.7 / GDScript**, desktop-first.
 **Phase 1 — Combat PoC ✅ done** *(make-or-break gate passed, 2026-07-20)*. A playable
 one-hero/one-enemy fight with a timed offensive **press** and a defensive **parry**
 window, audio cues, and a debug timing overlay — and **the timing feels good**, which
-was Phase 1's entire exit criterion. Next up: **Phase 2 — Combat prototype** (real
-party, turn order, multiple move types).
+was Phase 1's entire exit criterion. Next up: **Phase 2A — party, visible turn
+queue, targeting & full menu** (no new systems yet; the Spring/Overdrive/status
+layer is Phase 2B).
 
 See `docs/Planning/Roadmap.md`.
 
