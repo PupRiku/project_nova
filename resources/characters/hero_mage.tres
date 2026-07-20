@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CombatantData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/combatant_data.gd" id="1"]
+[ext_resource type="Resource" path="res://resources/moves/basic_attack.tres" id="2"]
+[ext_resource type="Resource" path="res://resources/moves/fire.tres" id="3"]
+[ext_resource type="Resource" path="res://resources/moves/defend.tres" id="4"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Mage"
+max_hp = 24
+speed = 6
+color = Color(0.6, 0.4, 0.85, 1)
+moves = [ExtResource("2"), ExtResource("3"), ExtResource("4")]
+enemy_attacks = []

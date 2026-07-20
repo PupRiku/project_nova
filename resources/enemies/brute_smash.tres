@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyAttackData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_attack_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/action_command_timing.gd" id="2"]
+
+[sub_resource type="Resource" id="parry_timing"]
+script = ExtResource("2")
+window_open = 0.8
+window_duration = 0.22
+
+[resource]
+script = ExtResource("1")
+damage_base = 12
+telegraph_lead = 0.6
+parry = SubResource("parry_timing")
